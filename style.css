@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(240, 255, 255) !important;
+}
+.navbar{
+    color: white !important;
+}
+.container2{
+    margin: 0px auto;
+    width: 95vw;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid rgb(113, 113, 113);
+    background-color: white;
+}
+#additional{
+    padding: 0px 1rem;
+    background-color: white;
+    width: 95vw;
+    border: 2px solid rgb(113, 113, 113);
+}
+.arrow-head-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.weather-forecast-box{
+    border: 2px solid rgb(113, 113, 113);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.forecast-items{
+    display: flex;
+    justify-content: space-between;
+}
+.search-box{
+    display: flex;
+}
+.country-select{
+    width: 150px;
+    border-radius: 6px;
+    margin: 0px 3px;
+}
+.state-select{
+    width: 150px;
+    border-radius: 6px;
+    margin: 0px 3px;
+}
+#search-button{
+    margin: 0px 3px;
+}
