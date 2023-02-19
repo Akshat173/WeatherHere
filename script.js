@@ -2,7 +2,8 @@
 let time = new Date()
 let day_arr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 let month_arr = ['January', 'Februrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',]
-
+document.getElementById('page-container').style.visibility = "hidden"
+document.getElementById('animation').style.visibility = "hidden"
 
 // UV index discription function
 const uv_discription = (val) =>{
@@ -23,7 +24,7 @@ const uv_discription = (val) =>{
 	}
 }
 // Fetching weather data
-let weatherTeller = async (city, country) => {
+let weatherTeller = async (country, state) => {
 	const options = {
 		method: 'GET',
 		headers: {
@@ -31,19 +32,20 @@ let weatherTeller = async (city, country) => {
 			'X-RapidAPI-Host': 'aerisweather1.p.rapidapi.com'
 		}
 	};
-	let w2 = fetch(`https://aerisweather1.p.rapidapi.com/forecasts/${city},${country}`, options)
+	let w2 = fetch(`https://aerisweather1.p.rapidapi.com/forecasts/${state},${country}`, options)
 	w2.then((response)=>{
 		return response.json()
 	}).then((forecasts)=>{
-		console.log(forecasts)
 		if(forecasts.success){
+			document.getElementById('animation').style.visibility = "hidden"
+			document.getElementById('page-container').style.visibility = "visible"
 			let allForecasts = (forecasts.response[0].periods)
 			// today weather
 			document.getElementById("today-weather-container").innerHTML =` 
 				<h1 class="mb-1 fw-bolder">${allForecasts[0].avgTempC}°C</h1>
 				<p class="fw-semibold fs-6 text-capitalize mb-0">${allForecasts[0].weather}</p>
 				<p class="fw-semibold fs-6 mb-0">Feels like ${allForecasts[0].avgFeelslikeC}°C</p>
-				<p class="fw-semibold fs-6 text-capitalize mb-0">${city}, ${forecasts.response[0].place.country}</p>
+				<p class="fw-semibold fs-6 text-capitalize mb-0">${state}, ${country}</p>
 				<p class="fw-semibold fs-6 mb-0">${time.getDate() + " " + month_arr[time.getMonth()] + " " + time.getFullYear() + ", " + time.getHours() + ":" + time.getMinutes()}, ${day_arr[time.getDay()]}</p>
 			`
 
@@ -102,4 +104,7 @@ let weatherTeller = async (city, country) => {
 
 document.getElementById('search-button').onclick =()=>{
 	weatherTeller(document.getElementById('country').value, document.getElementById('state').value)
+	if(document.getElementById('country').value && document.getElementById('state').value){
+		document.getElementById('animation').style.visibility = "visible"
+	}
 }

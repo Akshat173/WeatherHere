@@ -1,53 +1,176 @@
-body{
+body {
     background-color: rgb(240, 255, 255) !important;
 }
-.navbar{
+
+.navbar {
     color: white !important;
 }
-.container2{
+
+.container2 {
     margin: 0px auto;
     width: 95vw;
 }
-.box{
+
+.box {
     display: flex;
     justify-content: space-between;
     border: 2px solid rgb(113, 113, 113);
     background-color: white;
 }
-#additional{
+
+#additional {
     padding: 0px 1rem;
     background-color: white;
     width: 95vw;
     border: 2px solid rgb(113, 113, 113);
 }
-.arrow-head-container{
+
+.arrow-head-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.weather-forecast-box{
+
+.weather-forecast-box {
     border: 2px solid rgb(113, 113, 113);
     background-color: white;
     display: flex;
     flex-direction: column;
 }
-.forecast-items{
+
+.forecast-items {
     display: flex;
     justify-content: space-between;
 }
-.search-box{
+
+.search-box {
     display: flex;
 }
-.country-select{
+
+.country-select {
     width: 150px;
     border-radius: 6px;
     margin: 0px 3px;
 }
-.state-select{
+
+.state-select {
     width: 150px;
     border-radius: 6px;
     margin: 0px 3px;
 }
-#search-button{
+
+#search-button {
     margin: 0px 3px;
+}
+
+.animation-box {
+    display: flex;
+    justify-content: center;
+}
+
+.lds-ellipsis {
+    color: black;
+    display: inline-block;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #000000;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .search-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .state-select {
+        margin: 3px 3px;
+    }
+
+    .country-select {
+        margin: 3px 3px;
+    }
+
+    #search-button {
+        margin: 3px 3px;
+    }
+}
+
+@media only screen and (max-width: 339px) {
+    .search-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .state-select {
+        margin: 3px 3px;
+    }
+
+    .country-select {
+        margin: 3px 3px;
+    }
+
+    #search-button {
+        margin: 3px 3px;
+    }
 }
