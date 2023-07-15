@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather here - A weather forecasting website</title>
+    <link rel="stylesheet" href="/WeatherHere/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar" style="background-color: #C9DEE6;">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-semibold fs-3">WeatherHere</a>
+        </div>
+    </nav>
+
+    <div class="animation-box" id="animation">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
+    <!-- Content container -->
+    <div class="container2 my-3" id="page-container">
+        <!-- Today's weather -->
+        <section>
+            <div class="box">
+                <!-- Temprature and dates -->
+                <div class="main-weather my-3 mx-3">
+                    <div id="png"></div>
+                    <div class="today-weather" id="today-weather-container">
+                    </div>
+                </div>
+
+                <!-- Wind speed, degrees and max-min temprature -->
+                <div class="today-additional-info mx-3 my-3" id="add-info">
+                    <div class="arrow-head-container">
+                        <img class="mb-3" id="arrow-head" height="50rem"
+                        src="/WeatherHere/images/arrow_head1.jpg">
+                    </div>
+                    <div id="add-info-text">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional informations -->
+        <section>
+            <div class="other-info my-3" id="additional">
+            </div>
+        </section>
+    </div>
+
+
+    <script src="/WeatherHere/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

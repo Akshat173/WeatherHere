@@ -1,0 +1,155 @@
+body {
+    background-color: rgb(240, 255, 255) !important;
+}
+.navbar {
+    color: white !important;
+}
+#png{
+    display: flex;
+}
+.tempr{
+    display: flex;
+    align-items: end;
+}
+.container-fluid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    flex-direction: column ;
+}
+.container2 {
+    margin: 0px auto;
+    width: 95vw;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid rgb(113, 113, 113);
+    background-color: white;
+}
+#additional {
+    padding: 0px 1rem;
+    background-color: white;
+    width: 95vw;
+    border: 2px solid rgb(113, 113, 113);
+}
+.arrow-head-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.search-box {
+    display: flex;
+}
+/* Loading animation */
+.animation-box {
+    display: flex;
+    justify-content: center;
+}
+
+.lds-ellipsis {
+    color: black;
+    display: inline-block;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #000000;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .search-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .state-select {
+        margin: 3px 3px;
+    }
+
+    .country-select {
+        margin: 3px 3px;
+    }
+
+    #search-button {
+        margin: 3px 3px;
+    }
+}
+
+@media only screen and (max-width: 339px) {
+    .search-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .state-select {
+        margin: 3px 3px;
+    }
+
+    .country-select {
+        margin: 3px 3px;
+    }
+
+    #search-button {
+        margin: 3px 3px;
+    }
+}
